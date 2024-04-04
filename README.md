@@ -7,6 +7,11 @@ Chatbot with Conversational Memory
 This FastAPI app implements a chatbot with Conversational Memory capabilities. It allows users to interact with the chatbot by asking questions, saving answers to memory, asking follow-up questions, clearing memory, and viewing the memory content.
 Functions:
 
+![Image 1](/images/1.png)
+
+![Image 2](/images/2.png)
+
+![Image 3](/images/3.png)
 
 • Answer Question:
 
@@ -79,4 +84,6 @@ To check frontend sperately, you need to install llama.cpp and serve the model o
 1. Install dependencies: `npm install`
 2. Start the development server: `npm run dev`
 3. you also need to download the GGUF model and start the Llama.cpp server. (use default port 8080)
+
+![Image 3](/images/4.png)
 
