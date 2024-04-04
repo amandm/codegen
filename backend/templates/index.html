@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Generator with Comments</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 700px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #005eff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004ecc;
+        }
+        .result {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Generator</h1>
+        <form action="http://localhost:8000/generate-code/" method="post">
+            <textarea name="description" placeholder="Describe the code you want to generate..."></textarea>
+            <button type="submit">Generate Code</button>
+        </form>
+        <!-- This is where the result will be displayed -->
+        <div class="result" style="display: none;" id="generatedCodeSection">
+            <h2>Generated Code:</h2>
+            <pre id="generatedCode"></pre>
+        </div>
+        <!-- This is the comment section, initially hidden -->
+        <div class="comment-section" style="display: none;" id="commentSection">
+            <h2>Comments:</h2>
+            <textarea id="commentInput" placeholder="Leave a comment..."></textarea>
+            <button onclick="submitComment()">Submit Comment</button>
+        </div>
+    </div>
+
+    <script>
+        // This is a placeholder function for submitting comments. You'll need to handle this with your backend.
+        function submitComment() {
+            var comment = document.getElementById('commentInput').value;
+            // Here, you would actually send the comment to the server
+            console.log("Comment submitted:", comment);
+        }
+
+        // Example function to display generated code - you will need to integrate with actual server response
+        function displayGeneratedCode() {
+            // You will get this response from your server after form submission
+            var generatedCode = 'Example generated code...';
+            document.getElementById('generatedCode').textContent = generatedCode;
+            document.getElementById('generatedCodeSection').style.display = 'block';
+            document.getElementById('commentSection').style.display = 'block';
+        }
+
+        // You can call this function after the form is submitted and the server responds with the generated code
+        // displayGeneratedCode();
+    </script>
+</body>
+</html>
